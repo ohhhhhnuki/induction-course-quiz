@@ -14,7 +14,7 @@ public interface IssueRepository {
     @Select("select distinct category from issues")
     List<String> findCategory();
 
-    @Select("select * from issues where category = #{category} limit #{totalNum}")
+    @Select("select *, RAND() from issues where category = #{category} order by RAND() limit #{totalNum} ")
     List<IssueEntity> findQuizList(int totalNum, String category);
 
     @Select("select * from scores where category = #{category} order by score DESC")
@@ -25,10 +25,10 @@ public interface IssueRepository {
 
 //    @Update("update issues set question = #{question}, description = #{description},  answer1 = #{answer1}, answer2 = #{answer2}, answer3 = #{answer3}, answer4 = #{answer4}, answer = #{answer}, category = #{category} where id = #{issueId}")
 //    void update(long issueId, @NotBlank @Size(max = 256) String question, @NotBlank @Size(max = 256) String description, @NotBlank @Size(max = 256) String answer1, @NotBlank @Size(max = 256) String answer2, @NotBlank @Size(max = 256) String answer3, @NotBlank @Size(max = 256) String answer4, int answer, @NotBlank @Size(max = 256) String category);
-
+//
 //    @Insert("insert into issues (question, description, answer1, answer2, answer3, answer4, answer, category) values (#{question}, #{description}, #{answer1}, #{answer2}, #{answer3}, #{answer4}, #{answer}, #{category})")
 //    void insert(String question, String description, String answer1, String answer2, String answer3, String answer4, int answer, String category);
-
+//
 //    @Select("select * from issues where id = #{issueId}")
 //    IssueEntity findById(long issueId);
 }
