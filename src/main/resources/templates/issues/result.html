@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org"
+      th:replace="~{fragments/layout :: layout(~{::title}, ~{::body})}">
+<head>
+    <title>Title</title>
+</head>
+<body>
+<h1>結果画面</h1>
+<p th:text="得点は + ${nowPlayer.totalNum} + 点中 + ${nowPlayer.correctNum} + 点です">得点:(correctNum)点</p>
+<a href="./recordForm.html" th:href="@{/issues/ranking/form}">ランキングに登録する</a>
+<a href="./ranking.html" th:href="@{/issues/ranking}">ランキングを見る</a>
+<a href="../index.html" th:href="@{/}">トップに戻る</a>
+</body>
+</html>

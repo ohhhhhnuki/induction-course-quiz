@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org"
+      th:replace="~{fragments/layout :: layout(~{::title}, ~{::body})}">
+<head>
+    <title>Title</title>
+</head>
+<body>
+<div id="problem">
+    <h4 th:text="Q + ${nowPlayer.nowQuizNum}">Q(nowQuizNum)</h4>
+    <p th:text="${nowPlayer.quizList.get(nowPlayer.nowQuizNum-1).question}">(question)</p>
+</div>
+<form action="${/issues/playing}" th:action="@{/issues/playing}" th:method="post">
+    <div id="select">
+        <input type="radio" name="answer" value="1" id="1"><label for="1" class="left"
+                            th:text="${nowPlayer.quizList.get(nowPlayer.nowQuizNum-1).answer1}">(answer1)</label>
+        <input type="radio" name="answer" value="2" id="2"><label for="2" class="right"
+                            th:text="${nowPlayer.quizList.get(nowPlayer.nowQuizNum-1).answer2}">(answer2)</label>
+        <input type="radio" name="answer" value="3" id="3"><label for="3" class="left"
+                            th:text="${nowPlayer.quizList.get(nowPlayer.nowQuizNum-1).answer3}">(answer3)</label>
+        <input type="radio" name="answer" value="4" id="4"><label for="4" class="right"
+                            th:text="${nowPlayer.quizList.get(nowPlayer.nowQuizNum-1).answer4}">(answer4)</label>
+    </div>
+    <a href="" value="前へ戻る">
+    <input type="submit" value="次へ">
+</form>
+</body>
+</html>

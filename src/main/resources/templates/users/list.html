@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout(~{::title}, ~{::body})}">
+<head>
+    <meta charset="UTF-8">
+    <title>ユーザー一覧 | 課題管理アプリケーション</title>
+</head>
+<body>
+<h1>ユーザー一覧</h1>
+<a href="../index.html" th:href="@{/}">トップページ</a>
+<a href="../creation.html" th:href="@{/users/creationForm}">作成</a>
+<table>
+    <thead>
+    <tr>
+        <th>ユーザー名</th>
+        <th>権限</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${userList}">
+        <th th:text="${user.username}">(username)</th>
+        <td th:text="${user.authority}">(authority)</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

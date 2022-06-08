@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org"
+      th:replace="~{fragments/layout :: layout(~{::title}, ~{::body})}">
+<head>
+    <title>Title</title>
+</head>
+<body>
+<h1>ランキング</h1>
+<table style="width: 300px;">
+    <thead>
+    <tr>
+        <th>順位</th>
+        <th>名前</th>
+        <th>ランキング</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="i : ${#numbers.sequence(1,scoreList.size(),1)}">
+        <td th:text="${i} + 位">(i)位</td>
+        <td th:text="${scoreList.get(i-1).name}">(name)</td>
+        <td th:text="${scoreList.get(i-1).score}">(score)</td>
+    </tr>
+    </tbody>
+
+    <a href="../index.html" th:href="@{/issues/result}">結果へ戻る</a>
+    <a href="../index.html" th:href="@{/}">トップへ戻る</a>
+</table>
+</body>
+</html>

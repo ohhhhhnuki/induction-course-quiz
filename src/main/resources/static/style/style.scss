@@ -1,0 +1,161 @@
+$font-black: #333333;
+
+body{
+	font-family: 'ヒラギノ角ゴシック';
+	background-color: #F5F5F5;
+	margin: 0;
+	padding: 0;
+}
+
+a{
+	color :black;
+	text-decoration: none;
+}
+
+header {
+	margin: 0;
+	padding: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+	border-bottom: #707070 solid 1px;
+    height: 70px;
+	display: flex;
+	align-items: center;
+    h3{
+		float: left;
+		width: 200px;
+		border: 1px solid black;
+		padding-left: 70px;
+        font-size: 24px;
+        height: 100%;
+        line-height: 70px;
+		color: $font-black;
+	}
+	#logout{
+		float: right;
+		line-height: 70px;
+		float: right;
+		width:120px;
+		height:40px;
+		background:gold;
+		border-radius:30px;
+	}
+}
+
+#base {
+	margin: 0 auto;
+	width: 860px;
+	#list{
+		margin: 20px auto 0;
+		height: auto;
+		ul{
+			margin: 100px auto 0;
+			width: 600px;
+			// border: 1px solid black;
+			li{
+				margin: 30px 0;
+				list-style-type: none;
+			}
+
+		}
+	}
+
+	#start{
+		margin: 100px auto 0;
+		width: 700px;
+		height: 350px;
+		background-color: #FFFFFF;
+		text-align: center;
+		h4{
+			padding-top: 70px;
+			font-size: 25px;
+		}
+		p{
+			padding-top: 130px;
+			font-size: 14px;
+		}
+	}
+
+	.button{
+		width: 140px;
+		height: 50px;
+		line-height: 50px;
+		margin:60px auto 0;
+		border: 1px black solid;
+		background-color: white;
+		border-radius: 10px;
+		text-align: center;
+		font-size: 16px;
+	}
+
+	#problem{
+		margin: 100px auto 0;
+		width: 700px;
+		height: 250px;
+		background-color: #FFFFFF;
+		text-align: left;
+		h4{
+			font-size: 30px;
+			font-weight: 800;
+			margin: 60px 0 0 40px;
+			padding: 20px 0 0 0;
+		}
+		p{
+			margin: 40px 60px 0;
+			line-height: 40px;
+			font-size: 16px;
+		}
+	}
+
+	#select {
+		width:700px ;
+		margin: 40px auto;
+		text-align: center;
+		padding: 0;
+	}
+	input[type=radio] {
+		display: none;
+	}
+	input[type="radio"]:checked + label {
+		background: #717171;/* マウス選択時の背景色を指定する */
+		color: #EEEEEE; /* マウス選択時のフォント色を指定する */
+	}
+	.label:hover {
+		background-color: #AAAAAA; /* マウスオーバー時の背景色を指定する */
+	}
+	label {
+		display: block; /* ブロックレベル要素化する */
+		float: left; /* 要素の左寄せ・回り込を指定する */
+		width: 290px; /* ボックスの横幅を指定する */
+		height: 45px; /* ボックスの高さを指定する */
+		padding-left: 5px; /* ボックス内左側の余白を指定する */
+		padding-right: 5px; /* ボックス内御右側の余白を指定する */
+		color: #222222; /* フォントの色を指定 */
+		text-align: center; /* テキストのセンタリングを指定する */
+		line-height: 45px; /* 行の高さを指定する */
+		cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
+		border: 1px solid #222222;/* ボックスの境界線を実線で指定する */
+		border-radius: 8px; /* 角丸を指定する */
+	}
+	.right{
+		margin: 10px 0 30px 40px;
+		background-color: #EEEEEE;
+	}
+	.left{
+		margin: 10px 40px 30px 0;
+		background-color: #EEEEEE;
+	}
+
+	input[type="submit"]{
+		float: right;
+		width: 200px;
+		border-radius: 5px;
+		background-color: #FFFFFF;
+		display: inline-block;
+	}
+
+}
+
+h1 {
+	font-size: 50px;
+}

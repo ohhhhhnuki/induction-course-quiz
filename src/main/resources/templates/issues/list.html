@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout(~{::title}, ~{::body})}">
+<head>
+    <title>クイズ一覧 | クイズアプリケーション</title>
+</head>
+<body>
+<div id="list">
+    <ul>
+        <a href="../index.html" th:href="@{/}">
+            <li>トップページ</li>
+        </a>
+    </ul>
+    <ul th:each="category : ${issueCategory}">
+
+        <a href="./start.html" th:href="@{/issues/start/{category}(category=${category})}">
+            <li th:text="${category}">
+                (category)
+            </li>
+        </a>
+
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org"
+      th:replace="~{fragments/layout :: layout(~{::title}, ~{::body})}">
+<head>
+    <title>問題スタート画面</title>
+</head>
+<body>
+<div id="start">
+    <h4 th:text="${nowCategory} + 編">(category) 編</h4>
+    <p>問題を開始します</p>
+</div>
+
+<div class="button">
+    <a href="./playing.html" th:href="@{/issues/playing/start/{category}(category=${nowCategory})}">
+        スタート
+    </a>
+</div>
+</body>
+</html>
