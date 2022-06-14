@@ -2,24 +2,132 @@
 <html xmlns:th="http://www.thymeleaf.org"
       th:replace="~{fragments/layout :: layout(~{::title}, ~{::body})}">
 <head>
-    <title>クイズ一覧 | クイズアプリケーション</title>
+    <meta charset="UTF-8">
+    <title>TRS | トップページ</title>
+    <!-- ↓後で削除 -->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"-->
+<!--        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" type="text/css" media="all" href="../../static/style/style.css" th:href="@{/style/style.css}" />-->
 </head>
 <body>
-<div id="list">
-    <ul>
+<!--    <header>-->
+<!--        <h3>-->
+<!--            TR-->
+<!--        </h3>-->
+<!--        <div id="logout">-->
+<!--            <a href="./logout.html" th:href="@{/logout}">ログアウト</a>-->
+<!--        </div>-->
+<!--    </header>-->
+
+    <div id="list-base" style="padding-top: 120px; background-color: #F0F0F0; height: 1000px;">
+        <div id="select-title" style="margin-bottom: 100px;">
+            <h5>Select </h5>
+            <p>　解きたいジャンルを選んでください</p>
+        </div>
+
+        <div class="list">
+            <a href="./issues/start.html" th:href="@{/issues/start/データベース}">
+                <div class="element">
+                    <div class="head">
+                        <h6>データベース</h6>
+                        <p>Datebase</p>
+                    </div>
+                    <div class="tail">
+                        <div class="icon-back img-back">
+                            <img src="../static/images/database.png" th:src="@{/images/database.png}">
+                            <!-- <span class="select"><span class="arrow"></span></span> -->
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="./issues/start.html" th:href="@{/issues/start/Java}">
+                <div class="element">
+                    <div class="head">
+                        <h6>Java</h6>
+                        <p>Progranmming</p>
+                    </div>
+                    <div class="tail">
+                        <div class="icon-back">
+                            <img src="../static/images/programming.png" th:src="@{/images/programming.png}">
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="./issues/start.html" th:href="@{/issues/start/簿記}">
+                <div class="element">
+                <div class="head">
+                    <h6>簿記</h6>
+                    <p>Bookkeeping</p>
+                </div>
+                <div class="tail">
+                    <div class="icon-back">
+                        <img src="../static/images/bookkeeping.png" th:src="@{/images/bookkeeping.png}">
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+
+        <div class="list">
+            <a href="./issues/start.html" th:href="@{/issues/start/中期経営計画}">
+                <div class="element">
+                <div class="head">
+                    <h6>中期経営計画</h6>
+                    <p>Management plan</p>
+                </div>
+                <div class="tail">
+                    <div class="icon-back">
+                        <img src="../static/images/managementPlan.png" th:src="@{/images/managementPlan.png}">
+                    </div>
+                </div>
+            </div>
+            </a>
+            <a href="./issues/start.html" th:href="@{/issues/start/ショートカットキー}">
+                <div class="element">
+                <div class="head">
+                    <h6>ショートカットキー</h6>
+                    <p>Shortcut Key</p>
+                </div>
+                <div class="tail">
+                    <div class="icon-back">
+                        <img src="../static/images/shortcutKey.png" th:src="@{/images/shortcutKey.png}">
+                    </div>
+                </div>
+                </div>
+            </a>
+            <a href="./issues/start.html" th:href="@{/issues/start/その他}">
+                <div class="element">
+                <div class="head">
+                    <h6>その他</h6>
+                    <p>Other</p>
+                </div>
+                <div class="tail">
+                    <div class="icon-back">
+                        <img src="../static/images/other.png" th:src="@{/images/database.png}">
+                    </div>
+                </div>
+            </div>
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+<!-- <div id="list"> -->
+    <!-- <ul>
         <a href="../index.html" th:href="@{/}">
             <li>トップページ</li>
         </a>
-    </ul>
-    <ul th:each="category : ${issueCategory}">
-
+    </ul> -->
+    <!-- <ul th:each="category : ${issueCategory}">
         <a href="./start.html" th:href="@{/issues/start/{category}(category=${category})}">
             <li th:text="${category}">
                 (category)
             </li>
         </a>
-
-    </ul>
-</div>
+    </ul> -->
+<!-- </div> -->
 </body>
 </html>

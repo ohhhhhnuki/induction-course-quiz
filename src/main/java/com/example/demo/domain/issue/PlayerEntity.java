@@ -12,10 +12,11 @@ import java.util.List;
 public class PlayerEntity {
 
     private int nowQuizNum = 1; // 現在解いている問題番号
-    private int totalNum = 3;   // 解く分野の合計問題数
+    private int totalNum = 10;   // 解く分野の合計問題数
     private String nowCategory; // 現在解いているカテゴリー
     private int[] answerNum = new int[totalNum];
     private int correctNum = 0; // 正解数
+    private int percentage = 0;
     private List<IssueEntity> quizList = new ArrayList<>(); // 出題される問題リスト
 
     // コンストラクタ
@@ -33,11 +34,12 @@ public class PlayerEntity {
 
     // 正答数判定
     public void showResult(){
-        correctNum = 0;
+        this.correctNum = 0;
         for (int i=0; i<totalNum; i++){
             if (this.answerNum[i] == this.getQuizList().get(i).getAnswer()){
-                correctNum ++;
+                this.correctNum ++;
             }
         }
+        this.percentage = this.correctNum * 100 / this.totalNum;
     }
 }

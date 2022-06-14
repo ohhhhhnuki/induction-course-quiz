@@ -1,14 +1,96 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymleaf.org"
-      th:replace="~{fragments/layout :: layout(~{::title}, ~{::body})}">
+<html lang="en" xmlns:th="http://www.thymleaf.org" th:replace="~{fragments/layout :: layout(~{::title}, ~{::body})}">
+
 <head>
-    <title>Title</title>
+    <meta charset="UTF-8">
+    <title>TRS | トップページ</title>
+    <!-- ↓後で削除 -->
+   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+   <link rel="stylesheet" type="text/css" media="all" href="../../static/style/style.css"
+       th:href="@{/style/style.css}" /> -->
 </head>
+
 <body>
-<h1>結果画面</h1>
-<p th:text="得点は + ${nowPlayer.totalNum} + 点中 + ${nowPlayer.correctNum} + 点です">得点:(correctNum)点</p>
-<a href="./recordForm.html" th:href="@{/issues/ranking/form}">ランキングに登録する</a>
-<a href="./ranking.html" th:href="@{/issues/ranking}">ランキングを見る</a>
-<a href="../index.html" th:href="@{/}">トップに戻る</a>
+   <!-- <header>
+       <h3>
+           TR
+       </h3>
+       <div id="logout">
+           <a href="./logout.html" th:href="@{/logout}">ログアウト</a>
+       </div>
+   </header> -->
+
+    <div id="result-base">
+        <div id="title">
+            <h1>結果</h1>
+            <h6>ジャンル</h6>
+            <p th:text="${nowPlayer.nowCategory}">(category)編</p>
+        </div>
+        <div id="score-base">
+            <div id="graph" th:style="|background-image: radial-gradient(#ECE9DF 60%, transparent 61%), conic-gradient(#880000 0% ${nowPlayer.percentage}%, #d9d9d9 ${nowPlayer.percentage}% 100%);|">
+                <p th:text="${nowPlayer.percentage}"></p>
+                <!-- 結果に応じて得点を入れる -->
+            </div>
+            <div id="detail-base">
+                <div class="detail">
+                    <p>平均スコア　</p>
+                    <h6>73%</h6>
+                </div>
+                <div class="detail">
+                    <p>累計回数　　</p>
+                    <h6>13回</h6>
+                </div>
+                <div class="detail">
+                    <p>回答日時　　</p>
+                    <h6>2020/05/28</h6>
+                </div>
+            </div>
+        </div>
+
+        
+        
+        <div id="list-base">
+            <h5>解説</h5>
+            <table>
+                <tr>
+                    <th width="30px"></th>
+                    <th width="50px"></th>
+                    <th width="40px" class="bottom-line"></th>
+                    <th width="360px" class="bottom-line">問題文</th>
+                </tr>
+                <!-- TODO 後でfor文に直す -->
+
+                <tr th:each="i : ${#numbers.sequence(0, nowPlayer.totalNum - 1)}">
+                    <td><p class="number" th:text="${i + 1}">1</p></td>
+                    <td><div class="detail-button"></div></td>
+                    <th:block th:if="${nowPlayer.answerNum[i] == nowPlayer.quizList.get(i).answer}">
+                        <td class="bottom-line"><span class="correct"></span></td>
+                    </th:block>
+                    <th:block th:if="${nowPlayer.answerNum[i] != nowPlayer.quizList.get(i).answer}">
+                        <td class="bottom-line"><span class="wrong"></span></td>
+                    </th:block>
+
+
+                    <td class="bottom-line" th:text="${nowPlayer.quizList.get(i).question}">(playerのanswer)</td>
+                </tr>
+<!--                <tr>-->
+<!--                    <td><p class="number">1</p></td>-->
+<!--                    <td><div class="detail-button"></div></td>-->
+<!--                    <td class="bottom-line"><span class="correct"></span></td>-->
+<!--                    <td class="bottom-line">データ型が揃っていないのでエラーになる</td>-->
+<!--                </tr>-->
+
+            </table>
+        </div>
+        <!-- <p>得点:(correctNum)点</p>
+        <a href="./recordForm.html" th:href="@{/issues/ranking/form}">ランキングに登録する</a>
+        <a href="./ranking.html" th:href="@{/issues/ranking}">ランキングを見る</a>
+        <a href="../index.html" th:href="@{/}">トップに戻る</a> -->
+
+        <a href="./list.html" th:href="@{/issues/list}"><div class="back-button">問題一覧へ</div></a>
+        <a href="./ranking.html" th:href="@{/issues/ranking}"><div class="ranking-button">ランキングへ</div></a>
+    </div>
 </body>
+
 </html>

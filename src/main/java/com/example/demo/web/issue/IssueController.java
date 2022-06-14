@@ -17,8 +17,14 @@ public class IssueController {
 
     private final IssueService issueService;
 
+    // (login or index or header) → inquiry
+    @GetMapping("/inquiryForm")
+    public String showInquiryForm(Model model) {
+        return "issues/inquiryForm";
+    }
+
     // index → list
-    @GetMapping
+    @GetMapping("/list")
     public String showList(Model model) {
         model.addAttribute("issueCategory", issueService.findCategory());
         return "issues/list";
@@ -39,7 +45,7 @@ public class IssueController {
         nowPlayer = new PlayerEntity(category);
         nowPlayer.setQuizList(issueService.findQuizList(nowPlayer.getTotalNum(), nowPlayer.getNowCategory()));
         model.addAttribute("nowPlayer", nowPlayer);
-        return "issues/playing";
+        return "redirect:/issues/playing";
     }
 
     // playing -> (redirect:playing or result)
@@ -49,7 +55,7 @@ public class IssueController {
         if (nowPlayer.getNowQuizNum() > nowPlayer.getTotalNum()) {
             nowPlayer.showResult();
             model.addAttribute("nowPlayer", nowPlayer);
-            return "issues/result";
+            return "redirect:/issues/result";
         }
         return "redirect:/issues/playing";
     }
@@ -93,5 +99,7 @@ public class IssueController {
         model.addAttribute("scoreList", issueService.getRanking(nowPlayer.getNowCategory()));
         return "redirect:/issues/ranking";
     }
+
+    // inquiryForm -> inquiryForm
 
 }

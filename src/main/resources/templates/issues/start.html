@@ -1,19 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymleaf.org"
-      th:replace="~{fragments/layout :: layout(~{::title}, ~{::body})}">
-<head>
-    <title>問題スタート画面</title>
-</head>
-<body>
-<div id="start">
-    <h4 th:text="${nowCategory} + 編">(category) 編</h4>
-    <p>問題を開始します</p>
-</div>
+<html lang="en" xmlns:th="http://www.thymleaf.org" th:replace="~{fragments/layout :: layout(~{::title}, ~{::body})}">
 
-<div class="button">
-    <a href="./playing.html" th:href="@{/issues/playing/start/{category}(category=${nowCategory})}">
-        スタート
-    </a>
-</div>
+<head>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>TRS | トップページ</title>
+        <!-- ↓後で削除 -->
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+       <link rel="stylesheet" type="text/css" media="all" href="../../static/style/style.css"
+           th:href="@{/style/style.css}" />
+    </head>
+
+<body>
+   <header>
+       <h3>
+           TR
+       </h3>
+       <div id="logout">
+           <a href="./logout.html" th:href="@{/logout}">ログアウト</a>
+       </div>
+   </header>
+
+    <div id="start-base">
+        <h4 th:text="${nowCategory} + 編">データベース編</h4>
+        <p>問題を開始します</p>
+
+        <a href="./playing.html" th:href="@{/issues/playing/start/{category}(category=${nowCategory})}">
+            <button class="learn-more">
+                <span class="circle" aria-hidden="true">
+                  <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">START</span>
+              </button>
+            <!-- <div class="start-button">
+                スタート
+            </div> -->
+        </a>
+    </div>
 </body>
+
 </html>
