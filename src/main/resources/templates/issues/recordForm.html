@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org"
+      th:replace="~{fragments/layout :: layout(~{::title}, ~{::body})}">
+<head>
+    <title>Title</title>
+</head>
+<body>
+<h1>ランキング登録フォーム</h1>
+<form action="#" th:action="@{/issues/ranking}" th:method="post" th:object="${recordForm}">
+    <div>
+        <label for="name">名前</label>
+        <input type="text" id="name" th:field="*{name}">
+        <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">(error)</p>
+    </div>
+    <div>
+        <button type="submit">登録</button>
+    </div>
+</form>
+</body>
+</html>

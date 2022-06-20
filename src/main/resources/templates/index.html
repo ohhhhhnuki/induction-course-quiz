@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::title}, ~{::body})}">
+
+<head>
+    <!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta charset="UTF-8">
+    <title>TRS | トップページ</title>
+    <!-- ↓後で削除 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" media="all" href="../static/style/style.css" th:href="@{/style/style.css}" />
+    <script type="text/javascript" src="../static/js/index.js" th:href="@{/js/index.js}"></script>
+</head>
+
+<body>
+  <!-- <header> -->
+<!--       <h3>-->
+<!--           TR-->
+<!--       </h3>-->
+<!--       <div id="logout">-->
+<!--           <a href="./logout.html" th:href="@{/logout}">ログアウト</a>-->
+<!--       </div>-->
+<!--   </header>-->
+
+    <div id="loading">
+        <div class="spinner"></div>
+      </div>
+
+    <div id="color1">
+        <div id="title-base">
+            <h5>ビジネスエンジニアリング研修復習サイト</h5>
+            <h1>Training Review</h1>
+            <div id="scroll">
+                <div id="arrow"></div>
+                SCROLL
+            </div>
+        </div>
+    </div>
+
+
+    <div id="color2">
+        <div id="list-base">
+            <div id="select-title">
+                <h5>Select </h5>
+                <p>　解きたいジャンルを選んでください</p>
+            </div>
+
+            <div class="list">
+                <a href="./issues/start.html" th:href="@{/issues/start/データベース}">
+                    <div class="element">
+                        <div class="head">
+                            <h6>データベース</h6>
+                            <p>Datebase</p>
+                        </div>
+                        <div class="tail">
+                            <div class="icon-back img-back">
+                                <img src="../static/images/database.png" th:src="@{/images/database.png}">
+                                <span class="select"><span class="arrow"></span></span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="./issues/start.html" th:href="@{/issues/start/Java}">
+                    <div class="element">
+                        <div class="head">
+                            <h6>Java</h6>
+                            <p>Progranmming</p>
+                        </div>
+                        <div class="tail">
+                            <div class="icon-back">
+                                <img src="../static/images/programming.png" th:src="@{/images/programming.png}">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="./issues/start.html" th:href="@{/issues/start/簿記}">
+                    <div class="element">
+                    <div class="head">
+                        <h6>簿記</h6>
+                        <p>Bookkeeping</p>
+                    </div>
+                    <div class="tail">
+                        <div class="icon-back">
+                            <img src="../static/images/bookkeeping.png" th:src="@{/images/bookkeeping.png}">
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+
+            <div class="list">
+                <a href="./issues/start.html" th:href="@{/issues/start/中期経営計画}">
+                    <div class="element">
+                    <div class="head">
+                        <h6>中期経営計画</h6>
+                        <p>Management plan</p>
+                    </div>
+                    <div class="tail">
+                        <div class="icon-back">
+                            <img src="../static/images/managementPlan.png" th:src="@{/images/managementPlan.png}">
+                        </div>
+                    </div>
+                </div>
+                </a>
+                <a href="./issues/start.html" th:href="@{/issues/start/ショートカットキー}">
+                    <div class="element">
+                    <div class="head">
+                        <h6>ショートカットキー</h6>
+                        <p>Shortcut Key</p>
+                    </div>
+                    <div class="tail">
+                        <div class="icon-back">
+                            <img src="../static/images/shortcutKey.png" th:src="@{/images/shortcutKey.png}">
+                        </div>
+                    </div>
+                    </div>
+                </a>
+                <a href="./issues/start.html" th:href="@{/issues/start/その他}">
+                    <div class="element">
+                    <div class="head">
+                        <h6>その他</h6>
+                        <p>Other</p>
+                    </div>
+                    <div class="tail">
+                        <div class="icon-back">
+                            <img src="../static/images/other.png" th:src="@{/images/ohter.png}">
+                        </div>
+                    </div>
+                </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="color3">
+        <div id="other-base">
+            <div class="other-title">
+                <h5>Developer</h5>
+                <p>　このアプリケーションの開発メンバーです。</p>
+            </div>
+
+            <div class="list">
+                <div>
+                    <img src="../static/images/umetsu.png" th:src="@{/images/umetsu.png}">
+                    <h6>梅津潤也</h6>
+                    <p>Junya Umetsu</p>
+                </div>
+
+                <div>
+                    <img src="../static/images/onuki.png" th:src="@{/images/onuki.png}">
+                    <h6>大貫弘貴</h6>
+                    <p>Hiroki Onuki</p>
+                </div>
+
+                <div>
+                    <img src="../static/images/kamimura.jpeg" th:src="@{/images/kamimura.jpeg}">
+                    <h6>上村洋平</h6>
+                    <p>Yohei Kamimura</p>
+                </div>
+            </div>
+
+            <div class="other-title">
+                <h5>Form</h5>
+                <p>　改善のご要望は以下のフォームにお願いいたします</p>
+            </div>
+
+            <form action="#" th:action="@{/issues/inquiryForm}" method="post">
+                <div>
+                    <label for="title" class="form-label">タイトル</label>
+                    <input type="text" id="title" name="title" class="form-control" placeholder="">
+                </div>
+                <div>
+                    <label for="summary" class="form-label">詳細内容</label>
+                    <textarea id="summary" name="summary" class="form-control" placeholder="" row="20"></textarea>
+                </div>
+                <div>
+                    <button id="send-button" type="submit">送信</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- <ul>
+        <li>
+            <a href="./issues/list.html" th:href="@{/issues}">クイズ一覧</a>
+        </li>
+        <li>
+            <a href="./issues/list.html" th:href="@{/issues}">成績（未実装）</a>
+        </li>
+        <li>
+            <a href="./logout.html" th:href="@{/logout}">ログアウト</a>
+        </li>
+    </ul> -->
+    <!--    <li sec:authorize="hasAuthority('ADMIN')"><a href="./users/list.html" th:href="@{/users}">ユーザー一覧</a></li>-->
+
+</body>
+
+</html>
