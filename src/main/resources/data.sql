@@ -31,6 +31,16 @@ INSERT INTO issues (question, description, answer1, answer2, answer3, answer4, a
     VALUES ('あなたは入社日(hire_date)が過去6ヶ月以内の行を表示しようと考えています。どのWHERE句を使用しますか.','DB編第1問',  'WHERE sysdate - hire_date <= 60', 'WHERE ADD_MONTHS(hire_date, 60) <= sysdate', 'WHERE MONTHS_BETWEEN(hire_date, sysdate) <= 60', 'WHERE MONTHS_BETWEEN(sysdate, hire_date) <= 60', 4, 'データベース');
 INSERT INTO issues (question, description, answer1, answer2, answer3, answer4, answer, category)
     VALUES ('実行してエラーにならない問い合わせがどれですか.','DB編第1問',  'SELECT MIN(AVG(salary)) FROM employee GROUP BY job_id;', 'SELECT AVG(MIN(salary)) FROM employee', 'SELECT job_id, MIN(AVG(salary)) FROM employee GROUP BY job_id;', 'MITSUMORI IS GENIUS', 1, 'データベース');
+INSERT INTO issues (question, description, answer1, answer2, answer3, answer4, answer, category)
+    VALUES ('リレーショナルデータベースの整合性について正しい記述はどれか.','DB編第6問',  '外部キーは、主キーを参照する', '外部キーはNOT NULL列を参照する', '外部キーの参照先の列は、必ずその外部キーを含む表とは別の表である必要がある', '外部キーの参照先の列は、必ずその外部キーを含む表と同一の表である必要がある', 1, 'DB');
+INSERT INTO issues (question, description, answer1, answer2, answer3, answer4, answer, category)
+    VALUES ('トランザクションが保証するべきACID特性について、正しい記述はどれですか.','DB編第6問', 'Aは、Availabilityのことである.', 'Cは、Confidentialityのことである.', 'IはIdentifiabilityのことである.', 'DはDurabilityのことである.', 4, 'DB');
+INSERT INTO issues (question, description, answer1, answer2, answer3, answer4, answer, category)
+    VALUES ('UNION演算子について正しい記述はどれですか.','DB編第6問',  '重複する値をチェックするときに、NULL値は無視される.', 'デフォルトでは出力はソートされない.', '全てのSELECT文で、選択する列の数が同じでなければならない.', '全てのSELECT文で、列の名前が同じでなければならない.', 3, 'DB');
+INSERT INTO issues (question, description, answer1, answer2, answer3, answer4, answer, category)
+    VALUES ('非等価結合について正しく記述しているのはどれか.','DB編第6問',  'USING句で結合条件を指定する.', 'Oracle結合構文で使用できる.', '見積もりどういうつもり', '3つ以上の表を非等価結合することはできない.', 2, 'DB');
+INSERT INTO issues (question, description, answer1, answer2, answer3, answer4, answer, category)
+    VALUES ('次の問い合わせは何を行なっていますか. SELECT employee_id, location_id FROM employees CROSS JOIN departments;','DB編第6問',  '完全外部結合', '自然結合', 'デカルト積', '副問い合わせ', 3, 'DB');
 
 --ShortCut
 INSERT INTO issues (question, description, answer1, answer2, answer3, answer4, answer, category)
