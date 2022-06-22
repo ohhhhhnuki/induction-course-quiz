@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org" th:replace="~{fragments/layout :: layout(~{::title}, ~{::body})}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TRS | トップページ</title>
+    <!-- ↓後で削除 -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="all" href="../../static/style/style.css"
+        th:href="@{/style/style.css}" /> -->
+</head>
+
+<body>
+    <!-- <header>
+        <h3>
+            TR
+        </h3>
+        <div id="logout">
+            <a href="./logout.html" th:href="@{/logout}">ログアウト</a>
+        </div>
+    </header> -->
+
+    <div id="result-base">
+        <div id="title">
+            <h1>ランキング</h1>
+            <h6>ジャンル</h6>
+            <p>データベース編</p>
+        </div>
+
+        <!--        <form action="#" th:action="@{/issues/ranking}" th:method="post" th:object="${recordForm}">-->
+        <!--            <div>-->
+        <!--                <label for="name">名前</label>-->
+        <!--                <input type="text" id="name" th:field="*{name}">-->
+        <!--                <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">(error)</p>-->
+        <!--            </div>-->
+        <!--            <div>-->
+        <!--                <button type="submit">登録</button>-->
+        <!--            </div>-->
+        <!--        </form>-->
+
+        <div class="register-form">
+            <th:block th:if="${!nowPlayer.isRegister()}">
+                <form action="#" th:action="@{/issues/ranking}" th:method="post" th:object="${recordForm}">
+                    <label for="name">登録名</label>
+                    <input type="text" id="name" th:field="*{name}" required>
+                    <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p> 
+                    <button type="submit">登録</button>
+                </form>
+            </th:block>
+
+            <th:block th:if="${nowPlayer.isRegister()}">
+                <p class="register">登録されました</p>
+            </th:block>
+        </div>
+
+        <div id="list-base">
+            <h5>ランキング</h5>
+            <div id="list-scroll">
+                <table>
+                    <tr>
+                        <th width="50px"></th>
+                        <th width="180px" class="bottom-line">登録名</th>
+                        <th width="60px" class="bottom-line">得点</th>
+                        <th width="100px" class="bottom-line">日付</th>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p class="number" style="background-color: #E06B91;">1</p>
+                        </td>
+                        <td class="bottom-line" th:text="${scoreList.get(0).name}">(name)</td>
+                        <td class="bottom-line" th:text="${scoreList.get(0).score}">(score)</td>
+                        <td class="bottom-line gray">20020.05.28</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="number" style="background-color: #8F78C7;">2</p>
+                        </td>
+                        <td class="bottom-line" th:text="${scoreList.get(1).name}">(name)</td>
+                        <td class="bottom-line" th:text="${scoreList.get(1).score}">(score)</td>
+                        <td class="bottom-line gray">20020.05.28</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="number" style="background-color: #F5B961;">3</p>
+                        </td>
+                        <td class="bottom-line" th:text="${scoreList.get(2).name}">(name)</td>
+                        <td class="bottom-line" th:text="${scoreList.get(2).score}">(score)</td>
+                        <td class="bottom-line gray">20020.05.28</td>
+                    </tr>
+                    <tr th:each="i : ${#numbers.sequence(4,scoreList.size(),1)}">
+                        <td>
+                            <p class="number" th:text="${i}">(num)</p>
+                        </td>
+                        <td class="bottom-line" th:text="${scoreList.get(i-1).name}">(name)</td>
+                        <td class="bottom-line" th:text="${scoreList.get(i-1).score}">(score)</td>
+                        <td class="bottom-line gray">20020.05.28</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+        <a href="./list.html" th:href="@{/issues/list}">
+            <div class="back-button">問題一覧へ</div>
+        </a>
+        <a href="./result.html" th:href="@{/issues/result}">
+            <div class="result-button">結果へ戻る</div>
+        </a>
+
+    </div>
+
+
+    <!-- <thead>
+    <tr>
+        <th>順位</th>
+        <th>名前</th>
+        <th>ランキング</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="i : ${#numbers.sequence(1,scoreList.size(),1)}">
+        <td th:text="${i} + 位">(i)位</td>
+        <td th:text="${scoreList.get(i-1).name}">(name)</td>
+        <td th:text="${scoreList.get(i-1).score}">(score)</td>
+    </tr>
+    </tbody> -->
+
+    </table>
+</body>
+
+</html>
