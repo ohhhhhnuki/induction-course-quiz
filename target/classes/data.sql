@@ -93,4 +93,4 @@ insert into scores (name, score, category) values ('オオヌキ' , 20, '簿記'
 insert into scores (name, score, category) values ('ウメツ' , 10, '簿記');
 
 
-insert into inquiry (title, summary) values ('例文タイトル', '例文本文（あああああああああ）')
+insert into inquiry (title, summary) values ('例文タイトル', '例文本文（あああああああああ）');

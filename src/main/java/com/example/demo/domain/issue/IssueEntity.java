@@ -6,7 +6,7 @@ import lombok.Data;
 @AllArgsConstructor
 @Data
 public class IssueEntity {
-    private long id;
+//    private long id;
     private String description;
     private String question;
     private String answer1;

@@ -1,3 +1,8 @@
+// ライブラリの組み込み
+compile("org.springframework.boot:spring-boot-starter-thymeleaf:${springBootVersion}")
+// nekohtmlを追加
+compile("net.sourceforge.nekohtml:nekohtml:1.9.22")
+
 plugins {
 	id 'org.springframework.boot' version '2.6.7'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'

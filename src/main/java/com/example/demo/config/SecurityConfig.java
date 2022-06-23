@@ -20,12 +20,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         //for h2 console 本番では削除
-        http.authorizeRequests().antMatchers("/h2-console/**","/fonts/**", "/style/**").permitAll()
-                        .and()
-                                .csrf().ignoringAntMatchers("/h2-console/**")
-                        .and()
-                                .headers().frameOptions().disable();
+        http.authorizeRequests().antMatchers("/fonts/**","/style/**").permitAll();
+//        http.authorizeRequests().antMatchers("/h2-console/**","/fonts/**", "/style/**").permitAll()
+//                        .and()
+//                                .csrf().ignoringAntMatchers("/h2-console/**")
+//                        .and()
+//                                .headers().frameOptions().disable();
 //        super.configure(http);
+
+
+
         http.authorizeRequests()
                 .mvcMatchers("/login/**").permitAll()
                 .mvcMatchers("/users/**").hasAnyAuthority("ADMIN")

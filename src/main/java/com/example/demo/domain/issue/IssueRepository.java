@@ -14,7 +14,7 @@ public interface IssueRepository {
     @Select("select distinct category from issues")
     List<String> findCategory();
 
-    @Select("select *, RAND() from issues where category = #{category} order by RAND() limit #{totalNum} ")
+    @Select("select *, random() from issues where category = #{category} order by random() limit #{totalNum} ")
     List<IssueEntity> findQuizList(int totalNum, String category);
 
     @Select("select * from scores where category = #{category} order by score DESC")
