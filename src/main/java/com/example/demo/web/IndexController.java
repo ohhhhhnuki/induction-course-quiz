@@ -19,14 +19,10 @@ public class IndexController {
     public String showLoginForm(){
         return "login";
     }
-//    @RequestMapping("/login")
-//    public ModelAndView showLogin(){
-//        return new ModelAndView("login");
-//    }
 
     @GetMapping("/logout")
     public String showLogoutForm(){
-        return "logout";
+        return "login";
     }
 
 }

@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
   <title>TRS | トップページ</title>
   <!-- ↓後で削除 -->
-  <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"-->
-  <!--        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">-->
-  <!--    <link rel="stylesheet" type="text/css" media="all" href="../static/style/style.css" th:href="@{/style/style.css}" />-->
+<!--  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"-->
+<!--        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">-->
+<!--  <link rel="stylesheet" type="text/css" media="all" href="../../static/style/style.css" th:href="@{/style/style.css}" />-->
+<!--  <script type="text/javascript" src="../static/js/index.js" th:href="@{/js/index.js}"></script>-->
 </head>
-
 <body>
 <!--    <header>-->
 <!--        <h3>-->
@@ -20,7 +20,22 @@
 <!--        </div>-->
 <!--    </header>-->
 
-<h1>お問合せフォーム</h1>
+  <div id="other-base" style="margin-top: 100px; height: auto;">
+      <h4 style="width: 700px; margin: 0 auto; font-weight: 600;">お問合せフォーム</h4>
+<form action="#" th:action="@{/issues/inquiryForm}" method="post" style="margin-top: 30px;">
+  <div>
+    <label for="title" class="form-label" style="color: #333333;">タイトル</label>
+    <input type="text" id="title" name="title" class="form-control" placeholder="">
+  </div>
+  <div>
+    <label for="summary" class="form-label" style="color: #333333;">詳細内容</label>
+    <textarea id="summary" name="summary" class="form-control" placeholder="" row="20"></textarea>
+  </div>
+  <div>
+    <button id="send-button" type="submit">送信</button>
+  </div>
+</form>
+  </div>
 
 </body>
 </html>

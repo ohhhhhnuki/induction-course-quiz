@@ -37,7 +37,7 @@ public class IssueController {
         model.addAttribute("nowCategory", category);
         return "issues/start";
     }
-
+    public int i = 0;
     PlayerEntity nowPlayer = null;
 
     // start -> playing
@@ -46,6 +46,7 @@ public class IssueController {
         nowPlayer = new PlayerEntity(category);
         nowPlayer.setQuizList(issueService.findQuizList(nowPlayer.getTotalNum(), nowPlayer.getNowCategory()));
         model.addAttribute("nowPlayer", nowPlayer);
+        i ++;
         return "redirect:/issues/playing";
     }
 

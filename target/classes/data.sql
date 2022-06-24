@@ -75,6 +75,31 @@ INSERT INTO issues (question, description, answer1, answer2, answer3, answer4, a
     VALUES ('指定した範囲のスクリーンショットを撮影するショートカットはどれか.','ShortCut編第1問',  'Windows+Shift+S', 'Windows+S', 'Alt+S', 'PrintScreen', 1, 'ショートカットキー');
 INSERT INTO issues (question, description, answer1, answer2, answer3, answer4, answer, category)
     VALUES ('PCをロックするショートカットはどれか','ShortCut編第1問',  'MITSUMORI+L', 'Shift+L', 'Ctrl+L', 'Windows+L', 4, 'ショートカットキー');
+
+--other
+INSERT INTO issues (question, description, answer1, answer2, answer3, answer4, answer, category)
+    VALUES ('たしろくんがこれまで行なってきた一発ギャグのうち、最もくだらなかったものはどれか.','たしろ編第1問',  'くるぶし', 'ファイトランザクション', '主キーしゅきしゅき', 'ちちしぼり', 1, 'その他');
+INSERT INTO issues (question, description, answer1, answer2, answer3, answer4, answer, category)
+    VALUES ('たしろくんは「昨日の晩御飯は?」という問いになんと答えでしょうか.','たしろ編第2問', 'トリッピーのサムゲタン', 'アザラシの踊り食い', 'Pマンのゆうちゃみ詰め', 'ゆうきのおひたし', 1, 'その他');
+INSERT INTO issues (question, description, answer1, answer2, answer3, answer4, answer, category)
+    VALUES ('たしろくんに「自分の子供ができたらなんと名前をつける?」と聞きました。なんと答えたでしょう.','たしろ編第3問',  'じゅんちゃん', 'けいちゃん', 'ひでちゃん', 'たかちゃん', 4, 'その他');
+INSERT INTO issues (question, description, answer1, answer2, answer3, answer4, answer, category)
+    VALUES ('[サイコパス診断]たしろくんが何も書いてない自動販売機で飲み物を買った。さてそれは何色だったか.','たしろ編第4問',  '透明', '腹落ちの黄昏イエロー', '白って200色あんねん', '落葉ひろいオレンジ', 2, 'その他');
+INSERT INTO issues (question, description, answer1, answer2, answer3, answer4, answer, category)
+    VALUES ('たしろくんが好きなYouTuberは誰でしょう.','たしろ編第5問',  'ヒカキン', 'セイキン', 'デカキン', 'イワキン', 1, 'その他');
+INSERT INTO issues (question, description, answer1, answer2, answer3, answer4, answer, category)
+    VALUES ('たしろくんがJava研修で習得したものは次のうちどれ.','たしろ編第6問',  '形容詞:ヨダレが垂れる', '行動:前髪を触る', '形容詞:ドン!!!!!!', 'トカゲのモノマネ', 2, 'その他');
+INSERT INTO issues (question, description, answer1, answer2, answer3, answer4, answer, category)
+    VALUES ('たしろくんがアンパンマンで好きなキャラクターは次のうちどれ.','たしろ編第7問',  'チャーシューマン', 'ニンニクゴリラちゃん', 'もくもく仙人', 'シャイニング落ち葉くん', 4, 'その他');
+INSERT INTO issues (question, description, answer1, answer2, answer3, answer4, answer, category)
+    VALUES ('たしろくんはJavaにてArrayをなんと呼んだでしょう.','たしろ編第8問', 'アレイ', 'アレ', 'アライ', 'アレェェ', 4, 'その他');
+INSERT INTO issues (question, description, answer1, answer2, answer3, answer4, answer, category)
+    VALUES ('たしろくんが生産管理体験道場にて、投稿していた料理動画に出演していた母の名前は次のうちどれ.','たしろ編第9問',  'じゅえる', 'どれみ', 'ともみ', 'てぃあら', 3, 'その他');
+INSERT INTO issues (question, description, answer1, answer2, answer3, answer4, answer, category)
+    VALUES ('[サービス問題]たしろくんの小さい頃の夢は.','たしろ編第10問',  '仮面ライダー', '村西とおる', 'ローランド', 'ある朝、僕は目が覚めると公園にいた。公園には喫茶店がありそこにはお品書きがあり、僕はそっとコーヒーを口にした。するとそこに落ち葉が一枚僕の前を横切った。その時僕が気づいた、今は48分30秒だと。', 1, 'その他');
+
+
+
 -- password1234
 insert into users(username, password, authority) values ('Yohei', '76e35854b202efbdab55ed8e298f0fac03e46674203f83030c3e23a3f24d2de135e74149736838cf', 'ADMIN');
 insert into users(username, password, authority) values ('Onuki', '5509be33d31222d73e53e1694893853821dddef030bbf84be853540206cec5ee17f1365842a8fb2b', 'USER');
@@ -94,3 +119,4 @@ insert into scores (name, score, category) values ('ウメツ' , 10, '簿記');
 
 
 insert into inquiry (title, summary) values ('例文タイトル', '例文本文（あああああああああ）');
+

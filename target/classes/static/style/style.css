@@ -54,6 +54,12 @@ header #logout a {
   text-decoration: none;
   color: #EEEEEE;
 }
+header img {
+  float: right;
+  display: block;
+  width: 30px;
+  margin: 18px 170px auto auto;
+}
 
 #base {
   margin: 0 auto;
@@ -154,6 +160,16 @@ header #logout a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+#list-base .list .unpublished {
+  opacity: 0.5;
+}
+#list-base .list .unpublished .prepare {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 10;
 }
 #list-base .list a {
   margin: 0;
@@ -665,7 +681,7 @@ header #logout a {
   text-align: left;
 }
 #result-base #list-base table tr {
-  height: 35px;
+  height: 70px;
 }
 #result-base #list-base table th {
   font-size: 12px;
@@ -696,13 +712,6 @@ header #logout a {
   border-color: transparent transparent #565656 #565656;
   transform: rotate(-45deg);
 }
-#result-base #list-base table .detail {
-  height: 0;
-  padding: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: 0.8s;
-}
 #result-base #list-base table input {
   display: none;
 }
@@ -716,7 +725,8 @@ header #logout a {
 }
 #result-base #list-base table .correct {
   margin-top: 6px;
-  display: inline-block;
+  display: block;
+  float: left;
   width: 19px;
   height: 19px;
   text-align: center;
@@ -724,7 +734,9 @@ header #logout a {
   border: solid 2.5px red;
 }
 #result-base #list-base table .wrong {
+  margin-top: 5px;
   display: block;
+  float: left;
   position: relative;
   width: 20px;
   height: 20px;
@@ -751,6 +763,20 @@ header #logout a {
 #result-base #list-base table .gray {
   color: gray;
   font-size: 12px;
+}
+#result-base #list-base table .question {
+  margin-top: 10px;
+  font-weight: 600;
+}
+#result-base #list-base table .answer {
+  background: #E4E1D6;
+  padding: 6px 10px;
+  margin: 8px;
+  margin-left: 25px;
+}
+#result-base #list-base table .choice {
+  background: #333333;
+  color: white;
 }
 #result-base #list-scroll::-webkit-scrollbar {
   display: none;
@@ -807,4 +833,6 @@ header #logout a {
 @font-face {
   font-family: "NotoSans-Light";
   src: url("../fonts/NotoSansJP-Light.otf") format("truetype");
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

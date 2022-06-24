@@ -6,14 +6,14 @@
     <meta charset="UTF-8">
     <title>TRS | トップページ</title>
     <!-- ↓後で削除 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" media="all" href="../static/style/style.css" th:href="@{/style/style.css}" />
-    <script type="text/javascript" src="../static/js/index.js" th:href="@{/js/index.js}"></script>
+<!--  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"-->
+<!--      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">-->
+<!--  <link rel="stylesheet" type="text/css" media="all" href="../static/style/style.css" th:href="@{/style/style.css}" />-->
+<!--    <script type="text/javascript" src="../static/js/index.js" th:href="@{/js/index.js}"></script>-->
 </head>
 
 <body>
-  <!-- <header> -->
+<!--   <header>-->
 <!--       <h3>-->
 <!--           TR-->
 <!--       </h3>-->
@@ -21,10 +21,6 @@
 <!--           <a href="./logout.html" th:href="@{/logout}">ログアウト</a>-->
 <!--       </div>-->
 <!--   </header>-->
-
-    <div id="loading">
-        <div class="spinner"></div>
-      </div>
 
     <div id="color1">
         <div id="title-base">
@@ -73,8 +69,9 @@
                         </div>
                     </div>
                 </a>
-                <a href="./issues/start.html" th:href="@{/issues/start/簿記}">
-                    <div class="element">
+<!--                <a href="./issues/start.html" th:href="@{/issues/start/簿記}">-->
+                    <div class="element unpublished">
+                        <!-- <span class="prepare">準備中</span> -->
                     <div class="head">
                         <h6>簿記</h6>
                         <p>Bookkeeping</p>
@@ -85,12 +82,13 @@
                         </div>
                     </div>
                 </div>
-                </a>
+<!--                </a>-->
             </div>
 
             <div class="list">
-                <a href="./issues/start.html" th:href="@{/issues/start/中期経営計画}">
-                    <div class="element">
+<!--                <a href="./issues/start.html" th:href="@{/issues/start/中期経営計画}">-->
+                    <div class="element unpublished">
+                        <!-- <span class="prepare">準備中</span> -->
                     <div class="head">
                         <h6>中期経営計画</h6>
                         <p>Management plan</p>
@@ -101,7 +99,7 @@
                         </div>
                     </div>
                 </div>
-                </a>
+<!--                </a>-->
                 <a href="./issues/start.html" th:href="@{/issues/start/ショートカットキー}">
                     <div class="element">
                     <div class="head">
@@ -123,7 +121,7 @@
                     </div>
                     <div class="tail">
                         <div class="icon-back">
-                            <img src="../static/images/other.png" th:src="@{/images/ohter.png}">
+                            <img src="../static/images/other.png" th:src="@{/images/other.png}">
                         </div>
                     </div>
                 </div>
@@ -163,7 +161,7 @@
 
             <div class="other-title">
                 <h5>Form</h5>
-                <p>　改善のご要望は以下のフォームにお願いいたします</p>
+                <p>　改善のご要望や感想は以下のフォームにお願いいたします</p>
             </div>
 
             <form action="#" th:action="@{/issues/inquiryForm}" method="post">
@@ -178,6 +176,7 @@
                 <div>
                     <button id="send-button" type="submit">送信</button>
                 </div>
+            <p style="color: white; margin-top: 6px;">※送信が完了すると、画面上部に戻ります。</p>
             </form>
 
         </div>
@@ -194,7 +193,7 @@
             <a href="./logout.html" th:href="@{/logout}">ログアウト</a>
         </li>
     </ul> -->
-    <!--    <li sec:authorize="hasAuthority('ADMIN')"><a href="./users/list.html" th:href="@{/users}">ユーザー一覧</a></li>-->
+<!--        <li sec:authorize="hasAuthority('ADMIN')"><a href="./users/list.html" th:href="@{/users}">ユーザー一覧</a></li>-->
 
 </body>
 

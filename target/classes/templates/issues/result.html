@@ -3,24 +3,24 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>TRS | トップページ</title>
+    <title>TRS | 結果画面</title>
     <!-- ↓後で削除 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="all" href="../../static/style/style.css"
-        th:href="@{/style/style.css}" />
-    <script type="text/javascript" src="../static/js/index.js" th:href="@{/js/index.js}"></script>
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"-->
+<!--        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" type="text/css" media="all" href="../../static/style/style.css"-->
+<!--        th:href="@{/style/style.css}" />-->
+<!--    <script type="text/javascript" src="../static/js/index.js" th:href="@{/js/index.js}"></script>-->
 </head>
 
 <body>
-    <header>
-        <h3>
-            TR
-        </h3>
-        <div id="logout">
-            <a href="./logout.html" th:href="@{/logout}">ログアウト</a>
-        </div>
-    </header>
+<!--    <header>-->
+<!--        <h3>-->
+<!--            TR-->
+<!--        </h3>-->
+<!--        <div id="logout">-->
+<!--            <a href="./logout.html" th:href="@{/logout}">ログアウト</a>-->
+<!--        </div>-->
+<!--    </header>-->
 
     <div id="result-base">
         <div id="title">
@@ -37,7 +37,7 @@
             <div id="detail-base">
                 <div class="detail">
                     <p>平均スコア　</p>
-                    <h6>73%</h6>
+                    <h6>30%</h6>
                 </div>
                 <div class="detail">
                     <p>累計回数　　</p>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="detail">
                     <p>回答日時　　</p>
-                    <h6>2020/05/28</h6>
+                    <h6>2020/06/24</h6>
                 </div>
             </div>
         </div>
@@ -56,73 +56,140 @@
             <div id="list-scroll">
                 <table>
                     <thead>
-                        <tr>
+                        <tr style="height: 35px;" class="bottom-line">
                             <th width="30px"></th>
-                            <th width="50px"></th>
-                            <th width="40px" class="bottom-line"></th>
-                            <th width="360px" class="bottom-line">あなたの解答</th>
+                            <!-- <th width="50px"></th> -->
+                            <th width="40px"></th>
+                            <th width="360px">あなたの解答</th>
                         </tr>
                     </thead>
-                    <!-- TODO 後でfor文に直す -->
 
                     <tbody>
                         <div th:each="i : ${#numbers.sequence(0, nowPlayer.totalNum - 1)}">
-                            <tr>
+                            <tr class="bottom-line">
                                 <td>
                                     <p class="number" th:text="${i + 1}">1</p>
                                 </td>
+
+                                <td></td>
+
                                 <td>
-                                    <label for="label1">
-                                        <div class="detail-button"></div>
-                                    </label>
-                                    <!-- <input type="checkbox" id="label1" /> -->
+                                    <!-- 問題文 -->
+                                    <div class="question" th:text="${nowPlayer.quizList.get(i).question}">
+                                        (question)
+                                    </div>
+
+                                    <!-- 正答判定1 -->
+                                    <th:block th:if="${nowPlayer.quizList.get(i).answer == 1 && nowPlayer.quizList.get(i).answer == nowPlayer.answerNum[i]}">
+                                        <span class="correct"></span>
+                                    </th:block>
+                                    <th:block th:if="${nowPlayer.quizList.get(i).answer == 1 && nowPlayer.quizList.get(i).answer != nowPlayer.answerNum[i]}">
+                                        <span class="wrong"></span>
+                                    </th:block>
+
+                                    <!-- 解答1 -->
+                                    <th:block th:if="${nowPlayer.answerNum[i] == 1}">
+                                        <div class="answer choice" th:text="${nowPlayer.quizList.get(i).answer1}">
+                                            (answer1)
+                                        </div>
+                                    </th:block>
+                                    <th:block th:if="${nowPlayer.answerNum[i] != 1}">
+                                        <div class="answer" th:text="${nowPlayer.quizList.get(i).answer1}">
+                                            (answer1)
+                                        </div>
+                                    </th:block>
+
+
+                                    <!-- 正答判定2 -->
+                                    <th:block th:if="${nowPlayer.quizList.get(i).answer == 2 && nowPlayer.quizList.get(i).answer == nowPlayer.answerNum[i]}">
+                                        <span class="correct"></span>
+                                    </th:block>
+                                    <th:block th:if="${nowPlayer.quizList.get(i).answer == 2 && nowPlayer.quizList.get(i).answer != nowPlayer.answerNum[i]}">
+                                        <span class="wrong"></span>
+                                    </th:block>
+
+                                    <!-- 解答2 -->
+                                    <th:block th:if="${nowPlayer.answerNum[i] == 2}">
+                                        <div class="answer choice" th:text="${nowPlayer.quizList.get(i).answer2}">
+                                            (answer2)
+                                        </div>
+                                    </th:block>
+                                    <th:block th:if="${nowPlayer.answerNum[i] != 2}">
+                                        <div class="answer" th:text="${nowPlayer.quizList.get(i).answer2}">
+                                            (answer2)
+                                        </div>
+                                    </th:block>
+
+
+                                    <!-- 正答判定3 -->
+                                    <th:block th:if="${nowPlayer.quizList.get(i).answer == 3 && nowPlayer.quizList.get(i).answer == nowPlayer.answerNum[i]}">
+                                        <span class="correct"></span>
+                                    </th:block>
+                                    <th:block th:if="${nowPlayer.quizList.get(i).answer == 3 && nowPlayer.quizList.get(i).answer != nowPlayer.answerNum[i]}">
+                                        <span class="wrong"></span>
+                                    </th:block>
+
+                                    <!-- 解答3 -->
+                                    <th:block th:if="${nowPlayer.answerNum[i] == 3}">
+                                        <div class="answer choice" th:text="${nowPlayer.quizList.get(i).answer3}">
+                                            (answer3)
+                                        </div>
+                                    </th:block>
+                                    <th:block th:if="${nowPlayer.answerNum[i] != 3}">
+                                        <div class="answer" th:text="${nowPlayer.quizList.get(i).answer3}">
+                                            (answer3)
+                                        </div>
+                                    </th:block>
+
+                                    <!-- 正答判定4 -->
+                                    <th:block th:if="${nowPlayer.quizList.get(i).answer == 4 && nowPlayer.quizList.get(i).answer == nowPlayer.answerNum[i]}">
+                                        <span class="correct"></span>
+                                    </th:block>
+                                    <th:block th:if="${nowPlayer.quizList.get(i).answer == 4 && nowPlayer.quizList.get(i).answer != nowPlayer.answerNum[i]}">
+                                        <span class="wrong"></span>
+                                    </th:block>
+
+                                    <!-- 解答4 -->
+                                    <th:block th:if="${nowPlayer.answerNum[i] == 4}">
+                                        <div class="answer choice" th:text="${nowPlayer.quizList.get(i).answer4}">
+                                            (answer4)
+                                        </div>
+                                    </th:block>
+                                    <th:block th:if="${nowPlayer.answerNum[i] != 4}">
+                                        <div class="answer" th:text="${nowPlayer.quizList.get(i).answer4}">
+                                            (answer4)
+                                        </div>
+                                    </th:block>
                                 </td>
-                                <th:block th:if="${nowPlayer.answerNum[i] == nowPlayer.quizList.get(i).answer}">
-                                    <td class="bottom-line"><span class="correct"></span></td>
-                                </th:block>
-                                <th:block th:if="${nowPlayer.answerNum[i] != nowPlayer.quizList.get(i).answer}">
-                                    <td class="bottom-line"><span class="wrong"></span></td>
-                                </th:block>
-
-
-                                <th:block th:if="${nowPlayer.answerNum[i] == 1}">
-                                    <td class="bottom-line" th:text="${nowPlayer.quizList.get(i).answer1}">
-                                        (playerのanswer)
-                                    </td>
-                                </th:block>
-                                <th:block th:if="${nowPlayer.answerNum[i] == 2}">
-                                    <td class="bottom-line" th:text="${nowPlayer.quizList.get(i).answer2}">
-                                        (playerのanswer)
-                                    </td>
-                                </th:block>
-                                <th:block th:if="${nowPlayer.answerNum[i] == 3}">
-                                    <td class="bottom-line" th:text="${nowPlayer.quizList.get(i).answer3}">
-                                        (playerのanswer)
-                                    </td>
-                                </th:block>
-                                <th:block th:if="${nowPlayer.answerNum[i] == 4}">
-                                    <td class="bottom-line" th:text="${nowPlayer.quizList.get(i).answer4}">
-                                        (playerのanswer)
-                                    </td>
-                                </th:block>
                             </tr>
-
-                            <!-- <tr class="row">
-                                <td width="30px"></td>
-                                <td width="30px"></td>
-                                <td width="30px"></td>
-                                <td width="150px" class="hide">
-                                    <p>非表示の行</p>
-                                </td>
-                            </tr> -->
-                            
                         </div>
-                        <!--                <tr>-->
-                        <!--                    <td><p class="number">1</p></td>-->
-                        <!--                    <td><div class="detail-button"></div></td>-->
-                        <!--                    <td class="bottom-line"><span class="correct"></span></td>-->
-                        <!--                    <td class="bottom-line">データ型が揃っていないのでエラーになる</td>-->
-                        <!--                </tr>-->
+                                        <!-- <tr>
+                                            <td><p class="number">1</p></td>
+                                            <td><div class="detail-button"></div></td>
+                                            <td>
+                                                <span class="correct"></span>
+                                            </td>
+
+                                            <td class="bottom-line">
+                                                <div class="question">
+                                                    次のうち、インポート宣言しなくても、自動的にインポートされるものはどれか.
+                                                </div>
+                                                <div class="answer choice">
+                                                    java.langのクラス
+                                                </div>
+                                                <div class="answer">
+                                                    java.langのうち、StringとSystemクラス
+                                                </div>
+                                                <span class="correct"></span>
+                                                <div class="answer">
+                                                    梨泰院クラス
+                                                </div>
+                                                <div class="answer">
+                                                    サブパッケージに属するクラス
+                                                </div>
+                                            </td>
+                                        </tr> -->
+                                        
                     </tbody>
                 </table>
             </div>
