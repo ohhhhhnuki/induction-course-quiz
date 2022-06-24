@@ -20,7 +20,7 @@
 <!--    </header>-->
 
     <div id="list-base" style="padding-top: 120px; background-color: #F0F0F0; height: 1000px;">
-        <div id="select-title" style="margin-bottom: 100px;">
+        <div id="select-title">
             <h5>Select </h5>
             <p>　解きたいジャンルを選んでください</p>
         </div>
@@ -35,7 +35,7 @@
                     <div class="tail">
                         <div class="icon-back img-back">
                             <img src="../static/images/database.png" th:src="@{/images/database.png}">
-                            <!-- <span class="select"><span class="arrow"></span></span> -->
+                            <span class="select"><span class="arrow"></span></span>
                         </div>
                     </div>
                 </div>
@@ -53,8 +53,9 @@
                     </div>
                 </div>
             </a>
-            <a href="./issues/start.html" th:href="@{/issues/start/簿記}">
-                <div class="element">
+            <!--                <a href="./issues/start.html" th:href="@{/issues/start/簿記}">-->
+            <div class="element unpublished">
+                <!-- <span class="prepare">準備中</span> -->
                 <div class="head">
                     <h6>簿記</h6>
                     <p>Bookkeeping</p>
@@ -65,15 +66,16 @@
                     </div>
                 </div>
             </div>
-            </a>
+            <!--                </a>-->
         </div>
 
         <div class="list">
-            <a href="./issues/start.html" th:href="@{/issues/start/中期経営計画}">
-                <div class="element">
+            <!--                <a href="./issues/start.html" th:href="@{/issues/start/中期経営計画}">-->
+            <div class="element unpublished">
+                <!-- <span class="prepare">準備中</span> -->
                 <div class="head">
-                    <h6>中期経営計画</h6>
-                    <p>Management plan</p>
+                    <h6>会社について</h6>
+                    <p>Company</p>
                 </div>
                 <div class="tail">
                     <div class="icon-back">
@@ -81,32 +83,32 @@
                     </div>
                 </div>
             </div>
-            </a>
+            <!--                </a>-->
             <a href="./issues/start.html" th:href="@{/issues/start/ショートカットキー}">
                 <div class="element">
-                <div class="head">
-                    <h6>ショートカットキー</h6>
-                    <p>Shortcut Key</p>
-                </div>
-                <div class="tail">
-                    <div class="icon-back">
-                        <img src="../static/images/shortcutKey.png" th:src="@{/images/shortcutKey.png}">
+                    <div class="head">
+                        <h6>ショートカットキー</h6>
+                        <p>Shortcut Key</p>
                     </div>
-                </div>
+                    <div class="tail">
+                        <div class="icon-back">
+                            <img src="../static/images/shortcutKey.png" th:src="@{/images/shortcutKey.png}">
+                        </div>
+                    </div>
                 </div>
             </a>
             <a href="./issues/start.html" th:href="@{/issues/start/その他}">
                 <div class="element">
-                <div class="head">
-                    <h6>その他</h6>
-                    <p>Other</p>
-                </div>
-                <div class="tail">
-                    <div class="icon-back">
-                        <img src="../static/images/other.png" th:src="@{/images/database.png}">
+                    <div class="head">
+                        <h6>その他</h6>
+                        <p>Other</p>
+                    </div>
+                    <div class="tail">
+                        <div class="icon-back">
+                            <img src="../static/images/other.png" th:src="@{/images/other.png}">
+                        </div>
                     </div>
                 </div>
-            </div>
             </a>
 
         </div>

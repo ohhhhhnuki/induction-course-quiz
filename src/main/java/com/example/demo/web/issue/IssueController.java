@@ -5,13 +5,17 @@ import com.example.demo.domain.issue.IssueService;
 import com.example.demo.domain.issue.PlayerEntity;
 import com.example.demo.domain.issue.RecordForm;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 @Controller
+@Scope("session")
 @RequestMapping("/issues")
 @RequiredArgsConstructor //finalかつ初期化されていないものを初期化するコンストラクタを作成
 public class IssueController {
@@ -37,7 +41,7 @@ public class IssueController {
         model.addAttribute("nowCategory", category);
         return "issues/start";
     }
-    public int i = 0;
+
     PlayerEntity nowPlayer = null;
 
     // start -> playing
@@ -46,7 +50,6 @@ public class IssueController {
         nowPlayer = new PlayerEntity(category);
         nowPlayer.setQuizList(issueService.findQuizList(nowPlayer.getTotalNum(), nowPlayer.getNowCategory()));
         model.addAttribute("nowPlayer", nowPlayer);
-        i ++;
         return "redirect:/issues/playing";
     }
 
@@ -114,6 +117,12 @@ public class IssueController {
     public String registerInquiry(@Validated InquiryForm inquiryForm, BindingResult result, Model model) {
         issueService.inquiryRegister(inquiryForm.getTitle(), inquiryForm.getSummary());
         return "redirect:/index";
+    }
+
+
+    @GetMapping("/error")
+    public String showError(Model model){
+        return "error";
     }
 
 }

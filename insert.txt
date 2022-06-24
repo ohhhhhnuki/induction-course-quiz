@@ -52,11 +52,11 @@ INSERT INTO issues (question, description, answer1, answer2, answer3, answer4, a
     ('内部結合と外部結合について正しい説明はどれですか.','DB編第1問',  '外部結合は結号条件が一致しない行のみを戻す', '完全外部結合が結合条件が一致しない行のみを戻す', '内部結合で返されるの行数は、外部結合で返される行数よりも常に多くなる', '内部結合は結合条件が一致する行のみを戻す', 4, 'データベース'),
     ('あなたは入社日(hire_date)が過去6ヶ月以内の行を表示しようと考えています。どのWHERE句を使用しますか.','DB編第1問',  'WHERE sysdate - hire_date <= 60', 'WHERE ADD_MONTHS(hire_date, 60) <= sysdate', 'WHERE MONTHS_BETWEEN(hire_date, sysdate) <= 60', 'WHERE MONTHS_BETWEEN(sysdate, hire_date) <= 60', 4, 'データベース'),
     ('実行してエラーにならない問い合わせがどれですか.','DB編第1問',  'SELECT MIN(AVG(salary)) FROM employee GROUP BY job_id;', 'SELECT AVG(MIN(salary)) FROM employee', 'SELECT job_id, MIN(AVG(salary)) FROM employee GROUP BY job_id;', 'MITSUMORI IS GENIUS', 1, 'データベース'),
-    ('リレーショナルデータベースの整合性について正しい記述はどれか.', 'DB編第6問',  '外部キーは、主キーを参照する', '外部キーはNOT NULL列を参照する', '外部キーの参照先の列は、必ずその外部キーを含む表とは別の表である必要がある', '外部キーの参照先の列は、必ずその外部キーを含む表と同一の表である必要がある', 1, 'DB'),
-    ('トランザクションが保証するべきACID特性について、正しい記述はどれですか.', 'DB編第7問','Aは、Availabilityのことである.', 'Cは、Confidentialityのことである.', 'IはIdentifiabilityのことである.', 'DはDurabilityのことである.', 4, 'DB'),
-    ('UNION演算子について正しい記述はどれですか.', 'DB編第7問', '重複する値をチェックするときに、NULL値は無視される.', 'デフォルトでは出力はソートされない.', '全てのSELECT文で、選択する列の数が同じでなければならない.', '全てのSELECT文で、列の名前が同じでなければならない.', 3, 'DB'),
-    ('非等価結合について正しく記述しているのはどれか.', 'DB編第9問',  'USING句で結合条件を指定する.', 'Oracle結合構文で使用できる.', '見積もりどういうつもり', '3つ以上の表を非等価結合することはできない.', 2, 'DB'),
-    ('次の問い合わせは何を行なっていますか. SELECT employee_id, location_id FROM employees CROSS JOIN departments;', 'DB編第7問', '完全外部結合', '自然結合', 'デカルト積', '副問い合わせ', 3, 'DB');
+    ('リレーショナルデータベースの整合性について正しい記述はどれか.', 'DB編第6問',  '外部キーは、主キーを参照する', '外部キーはNOT NULL列を参照する', '外部キーの参照先の列は、必ずその外部キーを含む表とは別の表である必要がある', '外部キーの参照先の列は、必ずその外部キーを含む表と同一の表である必要がある', 1, 'データベース'),
+    ('トランザクションが保証するべきACID特性について、正しい記述はどれですか.', 'DB編第7問','Aは、Availabilityのことである.', 'Cは、Confidentialityのことである.', 'IはIdentifiabilityのことである.', 'DはDurabilityのことである.', 4, 'データベース'),
+    ('UNION演算子について正しい記述はどれですか.', 'DB編第7問', '重複する値をチェックするときに、NULL値は無視される.', 'デフォルトでは出力はソートされない.', '全てのSELECT文で、選択する列の数が同じでなければならない.', '全てのSELECT文で、列の名前が同じでなければならない.', 3, 'データベース'),
+    ('非等価結合について正しく記述しているのはどれか.', 'DB編第9問',  'USING句で結合条件を指定する.', 'Oracle結合構文で使用できる.', '見積もりどういうつもり', '3つ以上の表を非等価結合することはできない.', 2, 'データベース'),
+    ('次の問い合わせは何を行なっていますか. SELECT employee_id, location_id FROM employees CROSS JOIN departments;', 'DB編第7問', '完全外部結合', '自然結合', 'デカルト積', '副問い合わせ', 3, 'データベース');
 
 
 INSERT INTO issues (question, description, answer1, answer2, answer3, answer4, answer, category) VALUES
@@ -104,6 +104,10 @@ insert into scores (name, score, category) values
     ('カミムラ' , 30, '簿記'),
     ('オオヌキ' , 40, '簿記'),
     ('ウメツ' , 10, '簿記'),
+    ('タナカ' , 20, 'ショートカットキー'),
+    ('カミムラ' , 30, 'ショートカットキー'),
+    ('オオヌキ' , 40, 'ショートカットキー'),
+    ('ウメツ' , 10, 'ショートカットキー'),
     ('タナカ' , 20, 'その他'),
     ('カミムラ' , 30, 'その他'),
     ('オオヌキ' , 40, 'その他'),
@@ -111,4 +115,3 @@ insert into scores (name, score, category) values
 
 
 insert into inquiry (title, summary) values ('例文タイトル', '例文本文（あああああああああ）');
-
