@@ -164,14 +164,14 @@
                 <p>　改善のご要望や感想は以下のフォームにお願いいたします</p>
             </div>
 
-            <form action="#" th:action="@{/issues/inquiryForm}" method="post">
+            <form action="#" th:action="@{/issues/inquiryForm}" method="post" th:object="${inquiryForm}">
                 <div>
                     <label for="title" class="form-label">タイトル</label>
-                    <input type="text" id="title" name="title" class="form-control" placeholder="">
+                    <input type="text" id="title" name="title" class="form-control" placeholder="" th:field="*{title}">
                 </div>
                 <div>
                     <label for="summary" class="form-label">詳細内容</label>
-                    <textarea id="summary" name="summary" class="form-control" placeholder="" row="20"></textarea>
+                    <textarea id="summary" name="summary" class="form-control" placeholder="" row="20" th:field="*{summary}"></textarea>
                 </div>
                 <div>
                     <button id="send-button" type="submit">送信</button>

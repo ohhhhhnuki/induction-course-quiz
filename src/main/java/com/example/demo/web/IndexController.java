@@ -1,18 +1,19 @@
 package com.example.demo.web;
 
+import com.example.demo.domain.issue.InquiryForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 
 @Controller
 public class IndexController {
     // GET /
     @GetMapping
-    public String index() {
+    public String index(@Validated @ModelAttribute InquiryForm inquiryForm, Model model) {
+        model.addAttribute("inquiryForm", inquiryForm);
         return "index";
     }
 

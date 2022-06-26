@@ -12,8 +12,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-
 @Controller
 @Scope("session")
 @RequestMapping("/issues")
@@ -116,7 +114,7 @@ public class IssueController {
     @PostMapping("/inquiryForm")
     public String registerInquiry(@Validated InquiryForm inquiryForm, BindingResult result, Model model) {
         issueService.inquiryRegister(inquiryForm.getTitle(), inquiryForm.getSummary());
-        return "redirect:/index";
+        return "redirect:/";
     }
 
 

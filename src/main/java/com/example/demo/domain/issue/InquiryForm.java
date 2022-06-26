@@ -8,11 +8,11 @@ import javax.validation.constraints.Size;
 @Data
 public class InquiryForm {
 
-    @NotBlank
+//    @NotBlank
     @Size(max=256)
     public String title;
 
-    @NotBlank
+//    @NotBlank
     @Size(max=256)
     public String summary;
 
